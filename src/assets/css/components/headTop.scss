@@ -1,0 +1,41 @@
+.header_container {
+    .el-menu .el-menu-item .el-dropdown{
+        min-height: 5vh;
+        max-height: 6vh;
+    }
+
+    .el-menu {
+        display: flex;
+        justify-content: flex-end;
+
+        .head_right_content {
+            height: 6vh;
+            right: 3vw;
+            max-height: inherit;
+            position: inherit;
+            display: flex;
+            align-items: center;
+            .el-menu-item{
+                top: -1vh;
+                height: inherit;
+            }
+        }
+        .head_right_avatar {
+            height: 6vh;
+            .el-dropdown {
+                height: inherit;
+                .avatar {
+                    width: 27px;
+                    height: 27px;
+                    border-radius: 50%;
+                    position: relative;
+                    top: 1vh;
+                    right: 1vw;
+                }
+            }
+        }
+    }
+
+
+
+}
