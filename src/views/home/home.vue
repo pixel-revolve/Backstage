@@ -1,35 +1,32 @@
 <template>
 <div class="home">
-  <el-container>
-    <el-header height="6vh">
-      <head-top></head-top>
-    </el-header>
-    <el-container>
-      <el-aside :width="isCollapse?'5vw':'17vw'" style="overflow-x: hidden">
-        <left-bar></left-bar>
-      </el-aside>
-      <el-container>
-        <el-main><router-view/></el-main>
-<!--        <el-footer></el-footer>-->
-      </el-container>
-    </el-container>
-  </el-container>
-
-
+  <h1>功能模块正在陆续开放...</h1>
+  <div class="vanMenu">
+    <van-grid :column-num="3" style="margin-top: 20px;">
+      <van-grid-item
+          v-for="item in vanMenu"
+          icon="photo-o"
+          :text="item"
+      ></van-grid-item>
+    </van-grid>
+  </div>
 </div>
 </template>
 
 <script>
-import HeadTop from "@/components/headTop";
-import LeftBar from "@/components/leftBar";
+import {Toast} from 'vant'
+
 export default {
   name: "home",
-  components: {LeftBar, HeadTop},
-  computed:{
-    isCollapse() {
-      return this.$store.state.tab.isCollapse;
+  data(){
+    return{
+      vanMenu:[
+          "聊天室","个人博客","文字","文字","文字","文字"
+      ]
+
     }
   }
+
 }
 </script>
 

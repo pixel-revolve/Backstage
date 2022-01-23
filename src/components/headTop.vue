@@ -9,8 +9,14 @@
         text-color="#fff"
         active-text-color="#66b1ff"
     >
+      <div class="head_left_logo">
+        <img :src="logo" class="logo">
+      </div>
       <div class="head_right_content">
-        <el-menu-item v-for="item in routers" :index="item.server">{{item.value}}</el-menu-item>
+        <el-menu-item v-for="item in routers" :index="item.server">
+          <i :class="'el-icon-' + item.icon"></i>
+          <span slot="title">{{ item.value }}</span>
+        </el-menu-item>
       </div>
       <div class="head_right_avatar">
         <el-dropdown trigger="click" @command="handleCommand">
@@ -35,9 +41,13 @@ export default {
     return {
       activeIndex: '1',
       routers: [
-        {value: '一',server: '1'},{value: '二',server: '2'},{value: '三',server: '3'},{value: '四',server: '4'}
+        {value: '请求',server: '1',icon:'ice-drink'},
+        {value: '日程',server: '2',icon:'date'},
+        {value: '待办',server: '3',icon:'s-claim'},
+        {value: '事项',server: '4',icon:'question'}
       ],
-      avatar: require("../assets/image/user/avatar.jpg")
+      avatar: require("../assets/image/user/avatar.jpg"),
+      logo: require("../assets/image/logo.png")
     };
   },
   methods: {
@@ -46,9 +56,10 @@ export default {
     },
     async handleCommand(command) {
       if (command === 'home') {
-        await this.$router.push('/');
+        await this.$router.push('/home');
       }else if(command === 'signout'){
         console.log('退出');
+        await this.$router.push('/login');
         // const res = await signout()
         // if (res.status === 1) {
         //   this.$message({

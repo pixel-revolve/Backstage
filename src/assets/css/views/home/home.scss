@@ -1,24 +1,14 @@
-.home {
-  .el-header {
-    position: inherit;
-    padding: inherit;
-    min-height: 5vh;
-    height: 6vh;
-  }
-  .el-aside{
-    position: inherit;
-    bottom: 0;
-    transition: width 0.3s, left 0.3s;
-    z-index: 600;
-    background-color: #f0f0f0;
-    transform: translate3d(0, 0, 0);
-    //height: calc(100vh - 61px);
-    height: 94vh;
+.home{
+  .vanMenu{
+    position: relative;
+    margin: 10px;
+    left: 0;
+    top: 18vh;
+    right: 0;
+    bottom: 49px;
+    overflow-y: scroll;
+
   }
 
-  .el-main{
-    position: inherit;
-    background-color: #fff;
-  }
+
 }
-

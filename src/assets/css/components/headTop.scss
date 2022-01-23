@@ -6,11 +6,23 @@
 
     .el-menu {
         display: flex;
-        justify-content: flex-end;
-
+        justify-content: space-between;
+        .head_left_logo{
+            position: inherit;
+            right: 13vw;
+            height: 6vh;
+            .logo{
+                width: 27px;
+                height: 27px;
+                //border-radius: 50%;
+                position: relative;
+                top: 1vh;
+                right: 1vw;
+            }
+        }
         .head_right_content {
             height: 6vh;
-            right: 3vw;
+            left: 29vw;
             max-height: inherit;
             position: inherit;
             display: flex;
@@ -22,6 +34,8 @@
         }
         .head_right_avatar {
             height: 6vh;
+            position: inherit;
+            left: 15vw;
             .el-dropdown {
                 height: inherit;
                 .avatar {
